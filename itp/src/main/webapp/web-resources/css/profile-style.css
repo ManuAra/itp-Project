@@ -1,0 +1,444 @@
+	body {
+		margin: 0;
+		padding: 0;
+		font-familiy: Quicksand;
+	}	
+	
+	section.main-section {
+		width: 100%;
+		height: 100vh;
+		background: url("giau.jpg");
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		position:fixed;
+	}
+	
+	nav {
+		margin-right: 25%;
+		position:fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		heigth: 80px;
+		padding: 10px 100px;
+		box-sizing: border-box;
+		transition: .3s;
+	}
+	
+	.logo img {
+		margin: 0;
+		padding: 20px 50px;
+		width: 100px;
+		height: 100px;
+		float: left;	
+		position:fixed:
+	}
+	
+	nav ul li{
+		list-style: none;
+	}
+	
+	nav > ul > li{
+		list-style: none;
+		float: right;
+		margin: 0;
+		padding:0;	
+	}
+	
+	nav ul::after {
+		content: '';
+		display: block;
+	}
+	
+	nav ul li a {
+		display: inline-block;
+		margin-top: 20px;
+		color: #000000;
+		padding: 0px 20px; 
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: .3s;
+		font-size: 15px;
+		border-radius: 8px;
+		cursor: pointer;
+	}
+	
+	nav ul li ul li {
+		text-align: center;
+	}
+	
+	nav ul li ul li a {
+		padding: 0;
+		margin-top: 25px;
+	}
+	
+	nav ul li a:hover {
+		color: #ffffff;
+	}
+
+	nav ul li a.focus{
+		outline: none;	
+	}
+	
+	.profile {
+		width:30px;
+		height: 30px;
+		padding: 0;
+		margin-top: -10px;
+		margin-left: 10px;
+		position:fixed;
+	}
+	
+	/** segundo nivel **/
+	
+	nav ul ul{
+		position: absolute;
+		display: none;
+		padding:0;
+		margin:0;
+		box-sizing: border-box;
+	}
+	
+	nav ul li:hover > ul {
+		display: block;
+	}
+	
+	/** Main content **/
+	
+	.profile-img {
+		width: 100px;
+		height: 100px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-left: 47%;
+		margin-right: 47%;
+		padding: 0;
+		border-radius: 50%;
+		float:both;
+		
+	}
+	
+	.sec-container {
+		width: 95%;
+		height: 60%;
+		background: #282d2c;
+		opacity: 0.8;
+		margin-top: 10px;
+		margin-bottom: 0;
+		margin-left: 2.5%;;
+		margin-right: 2.5%;
+		padding: 0;
+		float:right;
+		border-radius: 10px;
+		position:fixed;
+		overflow: auto;
+	}
+	
+	::-webkit-scrollbar {
+		width: 0px;
+	}
+	
+	tr{
+		height: 30px;
+	}
+	
+	th {
+		border-bottom: 1px solid #ffffff;
+		font-weigth: bold;
+		font-size: 25px;
+		padding: 0 0 5px 0 ;
+		text-align: center;	
+		color: #ffffff;
+	}
+	
+	.user-table {
+		margin-top: 1.5%;
+		margin-bottom: 0;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		padding: 0;
+		width: 95%;
+		height: 100px;
+		border: none;
+		border-radius: 10px;
+	}
+	
+	.user-table td {
+		text-align: center;
+		margin:0;
+		color: #ffffff;
+		padding: 5px 5px;
+		text-align: center;
+	}
+	
+	.experience-table {
+		margin-top: 1.5%;
+		margin-bottom: 0;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		padding: 0;
+		width: 95%;
+		height: 100px;
+		border: 1px solid #ffffff;
+		border-radius: 10px;
+	}
+	
+	.experience-table .td-description {
+		border: 1px solid #ffffff;
+		border-radius: 7px;
+		margin: 7px;
+		text-align: center;
+	}
+	
+	.experience-table td {
+		margin:0;
+		text-align: left;
+		color: #ffffff;
+		padding: 5px 5px;
+		border-bottom: none;
+	}
+	
+	.experience-table .td-description {
+		border: 1px solid #ffffff;
+		border-radius: 7px;
+		margin: 7px;
+		text-align: center;
+	}
+	
+	.experience-table th {
+		text-align: left;
+		padding: 5px 20px;
+	}
+	
+	.exp-edit-delete {
+		width: 88%;
+	}
+	
+	.exp-edit {
+		width: 6%;
+	}
+	
+	.exp-delete {
+		width: 6%;
+	}
+	
+	.project-table {
+		margin-top: 1.5%;
+		margin-bottom: 0;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		padding: 0;
+		width: 95%;
+		height: 100px;
+		border: 1px solid #ffffff;
+		border-radius: 10px;
+	}
+	
+	.project-table td  {
+		margin:0;
+		text-align: center;
+		color: #ffffff;
+		padding: 5px 5px;
+		border-left: 3px solid #282d2c ;
+		border-right: 3px solid #282d2c ;
+		border-bottom: 1px solid #ffffff;		
+	}
+	
+	.project-table th {
+		text-align: left;
+		padding: 5px 20px;
+	}
+	
+	
+	.add-button {
+		text-decoration: none;
+		color: #ffffff;
+		margin-left: 80%;
+		background: #0092d5 ;
+		border-radius: 5px;
+		padding:  5px 20px ; 
+		font-size: 15px;
+		text-align: right;
+		float: right;
+		postion: fixed;
+	}
+	
+	.add-button:hover {
+		background: #0072b7;
+	}
+	
+	.project-table .td-file {
+		width: 15% ;
+	}
+	
+	.project-table .td-title {
+		width: 22.5%;
+	}
+	
+	.project-table .td-type {
+		width: 10%;
+	}
+	
+	.project-table .td-course {
+		width: 15%;
+	}
+	
+	.project-table .td-description  {
+		width: 28.75%;
+	}
+		
+	.button {
+		width: 8.75%;
+	}
+	
+	.project-table .td-normal  {
+		border: none;
+	}
+	
+	.edit-button {
+		text-decoration: none;
+		color: #ffffff;
+		background:;
+		margin: 0;
+		padding: 4px 20px;
+		border-radius: 5px;
+		opacity: 1;
+	}
+	
+	.edit-button:hover {
+		background: #39ba3b;
+		color: #ffffff;
+	}
+	
+	.delete-button {
+		text-decoration: none;
+		color: #ffffff;
+		margin: 0;
+		background:  ;
+		padding: 4px 20px;
+		border-radius: 5px;
+		opacity: 1;
+	}
+	
+	.delete-button:hover {
+		background: #da3c3b;
+		color: #ffffff;
+	}
+	
+	.download-button {
+		text-decoration: none;
+		color: #ffffff;
+		margin: 0;
+		background: #da3c3b ;
+		padding: 4px 20px;
+		border-radius: 5px;
+		opacity: 1;
+	}
+	
+	/** Skill form modal**/
+	 
+	.skill-modal {
+		position: absolute;
+		display: none;
+		background-color: #282d2c;
+		widht: 95%;
+		height: 95%;
+		top: 2.5%;
+		left: 2.5%;
+		right: 2.5%;
+		bottom: 2.5%;
+		z-index: 1;
+		border-radius: 5px;
+	}
+	
+	.skill-table-modal {
+		width: 90%;
+		height: 40%;
+		background: rgba(255, 255, 255, 1);
+		top: 30%;
+		left: 5%;
+		right: 5% ;
+		bottom: 30%;
+		padding: 0;
+		border: 3px solid #000000;
+		border-radius: 5px;
+		position: absolute;
+	}
+
+	.skill-table-modal td  {
+		height: 10px;
+		margin:0;
+		text-align: center;
+		color: rgba(0, 0, 0, 0.5);
+		padding: 5px 5px;
+		border-left: 3px solid #ffffff;	
+		border-right: 3px solid  #ffffff;
+		border-bottom: #ffffff;		
+	}
+	
+	.skill-table-modal td .td-title  {
+		text-transform: uppercase;
+		font-weight: bold;	
+	}
+	
+	.skill-table-modal th {
+		text-align: center;
+		padding: 5px 20px;
+		color: rgba(0, 0, 0, 0.7);
+		border-bottom: 2px solid rgba(0, 0, 0, 0.7);
+		border-left: 3px solid #ffffff ;
+		border-right: 3px solid  #ffffff;
+	}
+	
+	.select-file-button {
+		text-decoration: none;
+		color: #ffffff;
+		margin: 0;
+		background: #da3c3b ;
+		padding: 4px 20px;
+		border-radius: 5px;
+		opacity: 1;	
+	}
+	
+	.skill-table {
+		margin-top: 1.5%;
+		margin-bottom: 0;
+		margin-left: 2.5%;
+		margin-right: 2.5%;
+		padding: 0;
+		width: 95%;
+		height: 100px;
+		border: 1px solid #ffffff;
+		border-radius: 10px;
+	}
+	
+	.skill-table td {
+		margin:0;
+		text-align: left;
+		color: #ffffff;
+		padding: 5px 5px;
+		border-bottom: 1px solid #ffffff;
+	}
+	
+	.skill-table th {
+		text-align: left;
+		padding: 5px 20px;
+	}
+	
+	.skill-delete {
+		width: 8%;
+	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

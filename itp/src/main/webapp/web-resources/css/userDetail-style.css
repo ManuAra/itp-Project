@@ -1,0 +1,101 @@
+    h3 {
+		color: #ffffff;
+		text-align: center;
+		margin: 0;
+		padding: 10px 0 0 0;
+	}
+	
+	#userDetail td {
+		text-align: center;
+		margin: 25%;
+		width: 50%;
+	}
+	
+	#userDetail .td-normal {
+		text-align: right;
+		width: 37%;
+	}
+	
+	#userDetail .td-input {
+		text-align: left;
+		width: 63%;
+	}
+	
+	#userDetail .td-description {
+		text-align: center;
+		border-bottom: 1px solid #ffffff;
+		height: 120px;
+	}
+	
+	#userDetail .td-save {
+		height: 70px;
+		margin-top: 10px;
+	}
+	
+	#userDetail .save {
+		margin-left: 40%;
+		margin-right: 40%;
+		border-bottom: none;
+		cursor: pointer;
+	}
+	
+	#userDetail .user-table .td-input input	{
+		border: none;
+		border-bottom: 1px solid #fff;
+		background: transparent;
+		outline: none;
+		height: 30px;
+		color: #fff;
+		font-size: 16px;
+		width: 50%;
+	}
+	
+	#userDetail textarea {
+		width: 80%;
+		height: 90px;
+		max-width: 80%;
+		max-height: 90px;
+		border-radius: 7px;
+		background: transparent;
+		border: 1px solid #ffffff;
+	}
+	
+	#userDetail textarea:hover {
+		box-shadow: 0px 0px 30px 16px rgba(251,224,224, 0.3);
+	}
+	
+	#userDetail textarea:focus {
+		outline: 1px dotted #000;
+		outline: -webkit-focus-ring-color auto 5px;
+		background: #ffffff;
+	}
+	
+	.save-button {
+		width: 0.1px;
+		height: 0.1px;
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+	}
+	
+	.save-button + label {
+		font-size: 1.25em;
+    		font-weight: 200;
+   		color: white;
+    		background-color: #0092d5;
+    		display: inline-block;
+    		cursor: pointer;
+    		padding: 5px 20px;
+    		border-radius: 6px;
+	}
+	
+	.save-button + label:hover {
+		background-color: #0074aa;
+		border: 1px solid #000000;
+	}
+	
+	.save-button + label:focus {
+		outline: 1px dotted #000;
+		outline: -webkit-focus-ring-color auto 5px;
+	}
+	
