@@ -348,12 +348,20 @@
 	}
 	
 	.return-button {
-		width: 50px;
-		height: 50px;
-		margin-top: 0;
+		width: 100px;
+		height: 30px;
+		margin-top: 2%;
 		margin-bottom: 0;
-		margin-left: 0;
+		margin-left: 2.5%;
 		margin-right: 0;
 		padding: 0;
+		background-color: #484848;
+		border-radius: 5px;
+		color: #ffffff;
 	}	
+	
+	.return-button:hover {
+		background: #c0c2c2;
+		color: #484848;
+	}
 	

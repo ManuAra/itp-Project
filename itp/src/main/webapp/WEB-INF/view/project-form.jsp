@@ -34,7 +34,7 @@
 								</li>
 								<li><a href="#">Blog</a></li>
 								<li><a href="#">About</a></li>
-								<li><a href="#">Home</a></li>
+								<li><a href="${pageContext.request.contextPath}/userProfile/showHomePage">Home</a></li>
 							</ul>	
 						</nav>	
 		</header>
@@ -98,7 +98,10 @@
 						
 					</form:form>
 						
-						<img src="${pageContext.request.contextPath}/web-resources/images/return-button.png" class="return-button">	
+						 <!--  ${pageContext.request.contextPath}/userProfile/showUserProfile-userId-${userDetail.userId} -->
+								<form action="${pageContext.request.contextPath}/userProfile/showUserProfile-userId-${userDetail.userId}">				
+									<input type="submit" value="Go Back" class="return-button"/>
+								</form>	
 						
 				</div>
 	</section>

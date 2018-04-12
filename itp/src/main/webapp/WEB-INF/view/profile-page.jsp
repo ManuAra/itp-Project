@@ -37,7 +37,7 @@
 								</li>
 								<li><a href="#">Blog</a></li>
 								<li><a href="#">About</a></li>
-								<li><a href="#">Home</a></li>
+								<li><a href="${pageContext.request.contextPath}/userProfile/showHomePage">Home</a></li>
 							</ul>	
 						</nav>	
 		</header>
@@ -50,32 +50,6 @@
 		
 		
 		<div class="primary-container"></div>
-		
-			<div id="skillmodal" class="skill-modal">
-							
-							<!--  div class skill modal content -->
-							
-							
-								<form:form>
-									<table class="skill-table-modal" >
-									
-									<tr>
-										<th colspan="7">Add a Skill</th>
-									</tr>	
-									<tr>
-										<td colspan="2" class="td-title">Note: Remember not to be redundant on your personal skills.  </td>
-										
-									</tr>	
-									<tr>
-										<td class="td-normal" ><input type="text" placeholder="Enter text" /></td>
-										<td colspan="2" class="td-normal" >
-											<a href="#" class="delete-button">Save</a>
-									</tr>	
-								
-									</table>	
-								</form:form>
-			
-						</div>
 		
 				<div class="sec-container">
 			

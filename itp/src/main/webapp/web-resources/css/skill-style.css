@@ -4,8 +4,6 @@ body {
 		font-familiy: Quicksand;
 	}	
 	
-	
-	
 	section.main-section {
 		width: 100%;
 		height: 100vh;
@@ -262,11 +260,12 @@ body {
 		margin-left: 2.5%;
 		margin-right: 0;
 		padding: 0;
-		background-color: yellow;
+		background-color: #484848;
 		border-radius: 5px;
+		color: #ffffff;
 	}	
 	
 	.return-button:hover {
-		background: blue;
+		background: #c0c2c2;
+		color: #484848;
 	}
-	

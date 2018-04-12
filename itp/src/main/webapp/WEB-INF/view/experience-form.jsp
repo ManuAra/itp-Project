@@ -34,7 +34,7 @@
 								</li>
 								<li><a href="#">Blog</a></li>
 								<li><a href="#">About</a></li>
-								<li><a href="#">Home</a></li>
+								<li><a href="${pageContext.request.contextPath}/userProfile/showHomePage">Home</a></li>
 							</ul>	
 						</nav>	
 		</header>
@@ -88,14 +88,10 @@
 					</form:form>	
 								
 								
-							<!-- Construct the url to se the user profile -->	
-								<c:url var="userProfile" value="/userProfile/showUserProfile">
-									<c:param name="userId" value="${userDetail.userId}" />
-								</c:url>	
-										
-								<form action="${userProfile}">				
-									<input type="submit" value="Return Home" class="return-button"/>
-								</form>			
+							 <!--  ${pageContext.request.contextPath}/userProfile/showUserProfile-userId-${userDetail.userId} -->
+								<form action="${pageContext.request.contextPath}/userProfile/showUserProfile-userId-${userDetail.userId}">				
+									<input type="submit" value="Go Back" class="return-button"/>
+								</form>		
 				</div>
 				
 					

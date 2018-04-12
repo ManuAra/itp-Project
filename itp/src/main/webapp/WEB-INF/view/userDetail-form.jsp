@@ -38,7 +38,7 @@
 								</li>
 								<li><a href="#">Blog</a></li>
 								<li><a href="#">About</a></li>
-								<li><a href="#">Home</a></li>
+								<li><a href="${pageContext.request.contextPath}/userProfile/showHomePage">Home</a></li>
 							</ul>	
 						</nav>	
 		</header>

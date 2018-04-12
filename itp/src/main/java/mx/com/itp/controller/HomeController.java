@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 	
-		@RequestMapping("/")
-		public String goToHomePage() {
+	@RequestMapping("/")
+	public String LoginPage() {
 		
-			return "redirect:/userProfile/showLoginPage";
+		return "demo-login";
+		
 	}
 }

@@ -36,38 +36,6 @@ public class UserProfileController {
 	@Autowired
 	private UserSkillService userSkillService;
 	
-	
-	@GetMapping("/showSkillForm")
-	//  provisional method to skill form
-	public String goToSKillForm() {
-		
-		return "skill-form";
-	}
-	
-	@GetMapping("/projectForm")
-	public String projectForm() {
-		
-		return "project-form";
-	}
-	
-	@GetMapping("/experienceForm")
-	public String experienceForm() {
-		
-		return "experience-form";
-	}
-	
-	//metodo para home page(provisional recordar quitarlo)
-	
-	@GetMapping("/showLoginPage")
-	public String showLoginPage(Model theModel) {
-		
-		List<UserDetail> theUserDetails = userDetailService.getUserDetails();
-		
-		theModel.addAttribute("usersDetails", theUserDetails);
-		
-		return "home-page";
-	}
-	
 	@GetMapping("/showHomePage")
 	public String showHomePage(Model theModel) {
 		
@@ -113,15 +81,6 @@ public class UserProfileController {
 		
 	}
 	
-	// project form
-	
-	@GetMapping("showProjectForm")
-	public String showProjectForm() {
-		
-		
-		return "project-form";
-	}
-	//userDetailController/showFormForUpdateUserDetail
 	@GetMapping("/getUserDetail")
 	public String getUserDetail(@RequestParam("userId") int theId, Model theModel) {
 		

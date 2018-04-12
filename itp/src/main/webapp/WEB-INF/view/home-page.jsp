@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html>
@@ -34,7 +35,7 @@
 							</li>
 							<li><a href="#">Blog</a></li>
 							<li><a href="#">About</a></li>
-							<li><a href="#">Home</a></li>
+							<li><a href="${pageContext.request.contextPath}/userProfile/showHomePage">Home</a></li>
 						</ul>	
 					</nav>	
 				</header>
@@ -43,22 +44,24 @@
 			
 			<div class="search-bar">
 		
-				<!-- put new button: Add Customer
-		
-			input type="button" value="Add Customer"
-				   onclick="window.location.href='${pageContext.request.contextPath}/userDetail/formForAddUserDetail'; return false;"
-				   class="add-button"
-			/>
-			-->
-			
-			<!-- serach bar -->
-			
-				<form:form action="search" method="POST">
+				<!-- serach bar -->
+					<div class="search">
+						<form:form action="${pageContext.request.contextPath}/userProfile/search" method="POST">
+						
+							Search User: <input type="text" name="SearchName" />
+						
+							<input type="submit" id="search" value="Search" class="search-button">
+							<label for="search">Search</label>
+						</form:form>
+					</div>
 				
-					Search User: <input type="text" name="SearchName" />
 				
-					<input type="submit" value="Search" class="search-button">
-				</form:form>
+					<div class="add-user">
+						<input type="button" value="Add User" id="addUser" class="add-user-bttn"
+						   	onclick="window.location.href='${pageContext.request.contextPath}/userDetail/formForAddUserDetail'; return false;"/>
+						 <label for="addUser">Add User</label>  	
+					</div>
+				
 			</div>
 			
 			

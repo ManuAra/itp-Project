@@ -35,7 +35,8 @@
 		width: 100px;
 		height: 100px;
 		float: left;	
-		position:fixed:
+		position:fixed;
+		text-size: 15px;
 	}
 	
 	nav ul li{
@@ -130,7 +131,6 @@
 		margin-top: 150px;
 		width: 100%;
 		height: 100px;
-		background: #282d2c;
 		opacity: 0.7;
 		margin-bottom: 2%;
 		padding: 0;
@@ -138,12 +138,84 @@
 		position: fixed;
 	}
 	
+	.search {
+		margin-left: 5%;
+		margin-top: 35px;
+		position: fixed;
+		left-margin: 15px;
+		font-size: 20px;
+		height: 30px;
+	}
+	
+	.search input[type="text"]{
+		border-radius: 5px;
+	}
+	
+	.search-button {
+		width: 0.1px;
+		height: 0.1px;
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+	}
+	
+	.search-button + label {
+		font-size: 15px;
+    		font-weight: 200;
+   		color: white;
+    		background-color: #d22d2d;
+    		display: inline-block;
+    		cursor: pointer;
+    		padding: 5px 15px;
+    		border-radius: 5px;
+	}
+	
+	.search-button + label:hover {
+		background-color: #931f1f;
+		border: 1px solid #000000;
+	}
+	
+	.add-user{	
+		float: right;
+		margin-right: 30%;
+		margin-top: 30px;
+	}
+	
+	.add-user-bttn {
+		width: 0.1px;
+		height: 0.1px;
+		opacity: 0;
+		overflow: hidden;
+		position: absolute;
+	}
+	
+	.add-user-bttn + label {
+		font-size: 1.25em;
+    		font-weight: 200;
+   		color: white;
+    		background-color: #d22d2d;
+    		display: inline-block;
+    		cursor: pointer;
+    		padding: 7px 30px;
+    		border-radius: 6px;
+	}
+	
+	.add-user-bttn + label:hover {
+		background-color: #931f1f;
+		border: 1px solid #000000;
+	}
+	
+	.add-user-bttn + label:focus {
+		outline: 1px dotted #000;
+		outline: -webkit-focus-ring-color auto 5px;
+	}
+	
 	.user-container {
 		width: 90%;
 		height: 75%;
 		background: #282d2c;
 		opacity: 0.8;
-		margin-top: 3%;
+		margin-top: 3.5%;
 		margin-bottom: 4%;
 		margin-left: 5%;;
 		margin-right: 5%;

@@ -271,7 +271,7 @@ body {
     		background-color: #0092d5;
     		display: inline-block;
     		cursor: pointer;
-    		padding: 0.5px 0;
+    		padding: 1px 0;
     		border-radius: 6px;
     		text-align:center;
 	}
@@ -293,12 +293,14 @@ body {
 		margin-left: 2.5%;
 		margin-right: 0;
 		padding: 0;
-		background-color: yellow;
+		background-color: #484848;
 		border-radius: 5px;
+		color: #ffffff;
 	}	
 	
 	.return-button:hover {
-		background: blue;
+		background: #c0c2c2;
+		color: #484848;
 	}
 	
 	

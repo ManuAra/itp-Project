@@ -21,7 +21,8 @@
 	<section class="background">
 		
 		<header>	
-			<img src="${pageContext.request.contextPath}/web-resources/images/ing.png" class="logo">	
+			<!--  <img src="${pageContext.request.contextPath}/web-resources/images/ing.png" class="logo">	 -->
+			<p class="logo">LOGO</p>
 		</header>
 	
 	
