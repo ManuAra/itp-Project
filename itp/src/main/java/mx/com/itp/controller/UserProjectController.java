@@ -89,14 +89,15 @@ public class UserProjectController {
 		
 	}
 	
-	@GetMapping("/downloadProject-{userDetailuserId}-{UserProjectprojectId}-{ProjectFilefileId}")
-	public String downloadProject(@PathVariable int userDetailuserId, @PathVariable int tempUserProjectprojectId, 
-								@PathVariable int tempProjectFilefileId, Model theModel, HttpServletResponse response) throws IOException {
+	@GetMapping("/downloadProject-userId-{userDetailuserId}-projectId-{userProjectprojectId}-fileId-{projectFilefileId}")
+	public String downloadProject(@PathVariable int userDetailuserId, @PathVariable int UserProjectprojectId, 
+								@PathVariable int ProjectFilefileId, Model theModel, HttpServletResponse response) throws IOException {
 		
 		UserDetail theUserDetail = userDetailService.getUserDetail(userDetailuserId);
 		theModel.addAttribute("userDetail", theUserDetail);
 		
-		ProjectFile theProjectFile  = userProjectService.getProjectFileById(tempProjectFilefileId);
+		ProjectFile theProjectFile  = userProjectService.getProjectFileById(ProjectFilefileId);
+		theModel.addAttribute("projectFile", theProjectFile);
 		
 		FileCopyUtils.copy(theProjectFile.getProjectFile(), response.getOutputStream());
 		
@@ -105,12 +106,21 @@ public class UserProjectController {
 	
 	@PostMapping("/saveProjectFile-userId-{userDetailuserId}-projectId-{userProjectprojectId}")
 	public String uploadProjectFile(@PathVariable int userProjectprojectId, @PathVariable int userDetailuserId,
-									FileManager fileManager, Model theModel ) throws IOException {
+									FileManager fileManager,  Model theModel ) throws IOException {
 		
 		UserProject theUserProject = userProjectService.getUserProject(userProjectprojectId);
 		theModel.addAttribute("userProject", theUserProject);
+		
+		ProjectFile theProjectFile = new ProjectFile();
 				
-		saveProjectFile(fileManager, theUserProject);
+		saveProjectFile(fileManager, theUserProject, theProjectFile);
+		
+		int Id = theProjectFile.getFileId();
+		
+		System.out.println(">>> Printing file Id:" + Id);
+		
+		ProjectFile projectFile = userProjectService.getProjectFileById(Id);
+		theModel.addAttribute("projectFile", projectFile);
 		
 		return "redirect:/userProfile/showUserProfile-userId-"+userDetailuserId;
 	}
@@ -140,9 +150,10 @@ public class UserProjectController {
 		return "project-form";
 	}
 	
-	private void saveProjectFile (FileManager fileManager, UserProject theUserProject) throws IOException{
+	private void saveProjectFile (FileManager fileManager, UserProject theUserProject, ProjectFile theProjectFile) throws IOException{
 		
-		ProjectFile theProjectFile = new ProjectFile();
+		// se remueve crear project file
+		//ProjectFile theProjectFile = new ProjectFile();
 		
 		MultipartFile multipartFile = fileManager.getFile();
 	
@@ -151,6 +162,9 @@ public class UserProjectController {
 		theUserProject.setProjectFile(theProjectFile);
 		
 		userProjectService.saveProjectFile(theUserProject);
+		
+		
+		
 	}
 	
 	private void saveProjectDetail(UserProject theUserProject, UserDetail theUserDetail) throws IOException {

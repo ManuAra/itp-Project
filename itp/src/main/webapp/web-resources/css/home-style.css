@@ -107,6 +107,7 @@
 	
 	nav ul li:hover >	 ul {
 		display: block;
+		background: #ffffff;
 	}
 	
 	/** Main content **/
@@ -226,7 +227,7 @@
 		
 	}
 	
-	.user-container:hover{
+	.user-container:hover {
 		box-shadow: 0px 0px 30px 16px rgba(251,224,224, 0.3);
 	}
 	
@@ -239,6 +240,20 @@
 		margin-right: 46%;
 		padding: 0;
 		border-radius: 50%;
+	}
+	
+	.delete-user {
+		float: right;
+		clear: both;
+		margin-right: 2.5%;
+		margin-top: -3%;
+		font-size: 30px;
+		text-decoration: none;
+		color: #ffffff;
+	}
+	
+	.delete-user:hover {
+		color: #e50742;
 	}
 	
 	table {

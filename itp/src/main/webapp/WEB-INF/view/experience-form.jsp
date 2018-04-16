@@ -28,8 +28,13 @@
 								<li><a href="#"><img src="${pageContext.request.contextPath}/
 											web-resources/images/icon_profile.png" class="profile"></a>
 										<ul>
-										<li><a href="#">Edit Profile</a></li>
-										<li><a href="#">Log Out</a></li>
+										<!-- Both of these options will be appear when the Spring Security its set up, if the
+											user is loged in, these two (edit profile and log out) will be shown, but if not it will appear
+											log in, as of now, i comment all of the options -->
+										<!-- <li><a href="#">Edit Profile</a></li>
+											<li><a href="#">Log Out</a></li>
+											<li><a href="${pageContext.request.contextPath}/">Log in</a></li>
+										-->
 										</ul>
 								</li>
 								<li><a href="#">Blog</a></li>

@@ -29,8 +29,13 @@
 							<li><a href="#"><img src="${pageContext.request.contextPath}/
 										web-resources/images/icon_profile.png" class="profile"></a>
 									<ul>
-									<li><a href="#">Edit Profile</a></li>
+									<!-- Both of these options will be appear when the Spring Security its set up, if the
+										user is loged in, these two (edit profile and log out) will be shown, but if not it will appear
+											log in, as of now, i comment all of the options -->
+									<!--  <li><a href="#">Edit Profile</a></li>
 									<li><a href="#">Log Out</a></li>
+									<li><a href="${pageContext.request.contextPath}/">Log in</a></li>
+									-->
 									</ul>
 							</li>
 							<li><a href="#">Blog</a></li>
@@ -44,7 +49,7 @@
 			
 			<div class="search-bar">
 		
-				<!-- serach bar -->
+				<!-- search bar -->
 					<div class="search">
 						<form:form action="${pageContext.request.contextPath}/userProfile/search" method="POST">
 						
@@ -71,40 +76,49 @@
 		<c:forEach var="userDetail" items="${usersDetails}">	
 			<div class="user-container">
 			
+				
+				
 						<!-- c:url var="userProfile" value="/userProfile/showUserProfile">
 								c:param name="userId" value="${tempUser.userId}" />
 						   	/c:url> -->
-				<c:url var="userProfile" value="/userProfile/showUserProfile-userId-${userDetail.userId}" />	
+					<c:url var="userProfile" value="/userProfile/showUserProfile-userId-${userDetail.userId}" />	
 						
-					<img src="${pageContext.request.contextPath}/web-resources/images/blue_icon.jpg" class="profile-img">
+						<img src="${pageContext.request.contextPath}/web-resources/images/blue_icon.jpg" class="profile-img">
 						
-							<table class="user-table" >	
-								<tbody> 	
-									<tr>
-										<th>${userDetail.firstName}  </th>
-									</tr>	
-									<tr>
-										<td class="td-normal">Position: Status</td>
-									</tr>	
-									<tr>
-										<td class="td-normal">Pasante o titulado</td>
-									</tr>
-									<tr>
-										<td class="td-normal">Experience</td>
-									</tr>
-									<tr>
-										<td class="td-normal">Position: Status</td>
-									</tr>
-									<tr>
-										<td class="td-description">Description</td>
-									</tr>
-									<tr>
-										<td class="td-button">
-											<a href="${userProfile}" class="button">See Profile</a>
-										</td>
-									</tr>
-								</tbody>
-							</table>	
+						<c:url var="deleteUser" value="/userDetail/deleteUserDetail-userId-${userDetail.userId}" />
+						
+							<a href="${deleteUser}" class="delete-user" 
+							onclick="if (!(confirm('Are you sure you want to delete the user'))) return false"> &times;</a>
+							
+							
+								<table class="user-table" >	
+									<tbody> 	
+										<tr>
+											<th>${userDetail.firstName} ${userDetail.lastName} </th>
+											
+										</tr>	
+										<tr>
+											<td class="td-normal"> Username: ${userDetail.username} </td>
+										</tr>	
+										<tr>
+											<td class="td-normal"> ${userDetail.email} </td>
+										</tr>
+										<tr>
+											<td class="td-normal"> Current Situation: ${userDetail.currentSituation}</td>
+										</tr>
+										<tr>
+											<td class="td-normal">Experience: ${userDetail.experience}</td>
+										</tr>
+										<tr>
+											<td class="td-description"> ${userDetail.bio} </td>
+										</tr>
+										<tr>
+											<td class="td-button">
+												<a href="${userProfile}" class="button">See Profile</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>	
 			</div>	
 			
 		</c:forEach>		

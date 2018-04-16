@@ -31,8 +31,13 @@
 								<li><a href="#"><img src="${pageContext.request.contextPath}/
 											web-resources/images/icon_profile.png" class="profile"></a>
 										<ul>
-										<li><a href="#">Edit Profile</a></li>
-										<li><a href="#">Log Out</a></li>
+										<!-- Both of these options will be appear when the Spring Security its set up, if the
+											user is loged in, these two (edit profile and log out) will be shown, but if not it will appear
+											log in, as of now, i comment all of the options -->
+										<!-- <li><a href="#">Edit Profile</a></li>
+											<li><a href="#">Log Out</a></li>
+											<li><a href="${pageContext.request.contextPath}/">Log in</a></li>
+										-->
 										</ul>
 								</li>
 								<li><a href="#">Blog</a></li>
@@ -55,25 +60,25 @@
 			
 							<table class="user-table" >
 									<tr>
-										<th> ${userDetail.firstName} (Middle Name) + Last Name</th>
+										<th> ${userDetail.firstName} ${userDetail.lastName}
+											<a href="${pageContext.request.contextPath}/userDetail/formForUpdateUserDetail-userId-${userDetail.userId}"  
+																	class="update-button"> Update </a>
+										</th>
 									</tr>	
 									<tr>
-										<td>Current Position</td>
+										<td> ${userDetail.email} </td>
 									</tr>	
 									<tr>
-										<td>Pasante o titulado</td>
+										<td> Username: ${userDetail.username} </td>
 									</tr>
 									<tr>
-										<td>Experience</td>
+										<td> Current Situation: ${userDetail.currentSituation} </td>
 									</tr>
 									<tr>
-										<td>Email</td>
+										<td> Experience: ${userDetail.experience} </td>
 									</tr>
 									<tr>
-										<td class="td-description">Description
-										<br><br>
-										"Breve description of yourself"
-										</td>
+										<td class="td-description"> ${userDetail.bio} </td>
 									</tr>
 							</table>	
 							
@@ -95,7 +100,7 @@
 										</td>
 										<td class="exp-delete">
 											<a href="${pageContext.request.contextPath}/userExperience/deleteUserExperience-userId-${userDetail.userId}-experienceId-${userExperience.experienceId}" 
-														onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false" class="delete-button">Delete</a>
+														onclick="if (!(confirm('Are you sure you want to delete this experience'))) return false" class="delete-button">Delete</a>
 										</td>
 									</tr>
 									<tr>
@@ -136,11 +141,11 @@
 										<td rowspan="2" class="td-normal" >${userProject.projectDescription}</td>
 										<td rowspan="2" class="td-normal" >
 											<a href="${pageContext.request.contextPath}/project/deleteUserProject-userId-${userDetail.userId}-projectId-${userProject.projectId}" 
-													onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false" class="delete-button">Delete</a>
+													onclick="if (!(confirm('Are you sure you want to delete this project?'))) return false" class="delete-button">Delete</a>
 										</td>
 									</tr>
 									<tr>
-										<td class="td-normal"><a href="<c:url value="/project/formForAddProjectDetail-userId-${userDetail.userId}" />" class="download-button">Download</a></td>
+										<td class="td-normal"><a href="<c:url value="/project/downloadProject-userId-${userDetail.userId}-projectId-${userProject.projectId}-fileId-${projectFile.fileId}" />" class="download-button">Download</a></td>
 									</tr>
 								</c:forEach>		
 							</table>	
@@ -160,7 +165,7 @@
 										<td>- ${userSkill.skill}</td>
 										<td class="skill-delete">
 											<a href="${pageContext.request.contextPath}/userSkill/deleteSkill-userId-${userDetail.userId}-skillId-${userSkill.skillId}" 
-													onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false" class="delete-button">Delete</a>
+													onclick="if (!(confirm('Are you sure you want to delete this skill?'))) return false" class="delete-button">Delete</a>
 										</td>
 										
 									</tr>

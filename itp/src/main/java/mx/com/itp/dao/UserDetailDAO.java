@@ -10,9 +10,9 @@ public interface UserDetailDAO {
 
 	public void saveUserDetail(UserDetail theUserDetail);
 
-	public UserDetail getUserDetail(int theId);
+	public UserDetail getUserDetail(int userId);
 
-	public void deleteUserDetail(int theId);
+	public void deleteUserDetail(int userId);
 
 	public List<UserDetail> searchUser(String searchName);
 }

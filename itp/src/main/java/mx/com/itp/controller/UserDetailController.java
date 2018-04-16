@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,17 +22,14 @@ public class UserDetailController {
 	@Autowired
 	private UserDetailService userDetailService;
 	
-	
+	// This method its used on another controller, thus the void
 	@GetMapping("/listUserDetails")
-	public String listuserDetails(Model theModel) {
+	public void listuserDetails(Model theModel) {
 		
 		List<UserDetail> theUserDetails = userDetailService.getUserDetails();
 		
 		theModel.addAttribute("usersDetails", theUserDetails);
 		
-		//provisional
-		
-		return "home-page";
 	}
 	
 	@GetMapping("/formForAddUserDetail")
@@ -49,25 +47,24 @@ public class UserDetailController {
 		
 		userDetailService.saveUserDetail(theUserDetail);
 		
-		return "redirect:/userDetail/listUserDetails";
+		return "redirect:/userProfile/showHomePage";
 	}
 	
-	@GetMapping("/formForUpdateUserDetail")
-	public String formForUpdateUserDetail(@RequestParam("userId") int theId, Model theModel) {
+	@GetMapping("/formForUpdateUserDetail-userId-{userDetailuserId}")
+	public String formForUpdateUserDetail(@PathVariable("userDetailuserId") int userId, Model theModel) {
 		
-		UserDetail theUserDetail = userDetailService.getUserDetail(theId);
-		
+		UserDetail theUserDetail = userDetailService.getUserDetail(userId);
 		theModel.addAttribute("userDetail", theUserDetail);
 		
 		return "userDetail-form";
 	}
 	
-	@GetMapping("/deleteUserDetail")
-	public String deleteUserDetail(@RequestParam("userDetail") int theId) {
+	@GetMapping("/deleteUserDetail-userId-{userDetailuserId}")
+	public String deleteUserDetail(@PathVariable("userDetailuserId") int userId) {
 		
-		userDetailService.deleteUserDetail(theId);
+		userDetailService.deleteUserDetail(userId);
 		
-		return "redirect";
+		return "redirect:/userProfile/showHomePage";
 	}
 }
 

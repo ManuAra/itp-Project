@@ -39,24 +39,24 @@ public class UserDetailDAOImpl implements UserDetailDAO {
 	}
 
 	@Override
-	public UserDetail getUserDetail(int theId) {
+	public UserDetail getUserDetail(int userId) {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		UserDetail theUserDetail = currentSession.get(UserDetail.class, theId);
+		UserDetail theUserDetail = currentSession.get(UserDetail.class, userId);
 		
 		return theUserDetail;
 	}
 
 	@Override
-	public void deleteUserDetail(int theId) {
+	public void deleteUserDetail(int userId) {
 		
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		Query theQuery =
 					currentSession.createQuery("delete from UserDetail where id=:userId");
 		
-		theQuery.setParameter("userId", theId);
+		theQuery.setParameter("userId", userId);
 		
 		theQuery.executeUpdate();
 		

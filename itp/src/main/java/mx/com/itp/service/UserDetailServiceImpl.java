@@ -32,16 +32,16 @@ public class UserDetailServiceImpl implements UserDetailService {
 
 	@Override
 	@Transactional
-	public UserDetail getUserDetail(int theId) {
+	public UserDetail getUserDetail(int userId) {
 		
-		return userDetailDAO.getUserDetail(theId);
+		return userDetailDAO.getUserDetail(userId);
 	}
 
 	@Override
 	@Transactional
-	public void deleteUserDetail(int theId) {
+	public void deleteUserDetail(int userId) {
 		
-		userDetailDAO.deleteUserDetail(theId);
+		userDetailDAO.deleteUserDetail(userId);
 		
 	}
 

@@ -184,6 +184,22 @@
 		border-radius: 10px;
 	}
 	
+	.update-button {
+		text-decoration: none;
+		color: #ffffff;
+		background: none;
+		border-radius: 5px;
+		padding:  5px 15px ; 
+		font-size: 13px;
+		float: right;
+		border: 1px solid #5A5757;
+	}
+	
+	.update-button:hover {
+		background: #cdcccc;
+		color: #000000;
+	}
+	
 	.experience-table .td-description {
 		border: 1px solid #ffffff;
 		border-radius: 7px;
@@ -210,7 +226,7 @@
 		text-align: left;
 		padding: 5px 20px;
 	}
-	
+
 	.exp-edit-delete {
 		width: 88%;
 	}
@@ -254,14 +270,13 @@
 	.add-button {
 		text-decoration: none;
 		color: #ffffff;
-		margin-left: 80%;
-		background: #0092d5 ;
+		background: none;
 		border-radius: 5px;
-		padding:  5px 20px ; 
-		font-size: 15px;
-		text-align: right;
+		padding:  5px 15px ; 
+		font-size: 13px;
 		float: right;
-		postion: fixed;
+		clear: both;
+		border: 1px solid #5A5757;
 	}
 	
 	.add-button:hover {
@@ -299,11 +314,11 @@
 	.edit-button {
 		text-decoration: none;
 		color: #ffffff;
-		background:;
+		background:none;
 		margin: 0;
 		padding: 4px 20px;
 		border-radius: 5px;
-		opacity: 1;
+		border: 1px solid #5A5757;
 	}
 	
 	.edit-button:hover {
@@ -314,11 +329,10 @@
 	.delete-button {
 		text-decoration: none;
 		color: #ffffff;
-		margin: 0;
-		background:  ;
+		background: none ;
 		padding: 4px 20px;
 		border-radius: 5px;
-		opacity: 1;
+		border: 1px solid #5A5757
 	}
 	
 	.delete-button:hover {
